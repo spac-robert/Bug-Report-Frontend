@@ -12,4 +12,7 @@ export class HomepageProgrammerComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  click(): void{
+    alert("Solved")
+  }
 }
