@@ -7,13 +7,15 @@ import { HomepageTesterComponent } from './homepage-tester/homepage-tester.compo
 import { HomepageProgrammerComponent } from './homepage-programmer/homepage-programmer.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AuthComponent } from './auth/auth.component';
+import { AddBugReportComponent } from './add-bug-report/add-bug-report.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomepageTesterComponent,
     HomepageProgrammerComponent,
-    AuthComponent
+    AuthComponent,
+    AddBugReportComponent
   ],
   imports: [
     BrowserModule,
