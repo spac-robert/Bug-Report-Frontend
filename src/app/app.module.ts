@@ -8,6 +8,7 @@ import { HomepageProgrammerComponent } from './homepage-programmer/homepage-prog
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AuthComponent } from './auth/auth.component';
 import { AddBugReportComponent } from './add-bug-report/add-bug-report.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { AddBugReportComponent } from './add-bug-report/add-bug-report.component
     HomepageTesterComponent,
     HomepageProgrammerComponent,
     AuthComponent,
-    AddBugReportComponent
+    AddBugReportComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

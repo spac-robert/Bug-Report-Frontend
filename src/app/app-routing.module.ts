@@ -4,6 +4,7 @@ import { HomepageProgrammerComponent } from './homepage-programmer/homepage-prog
 import { HomepageTesterComponent } from './homepage-tester/homepage-tester.component';
 import { AuthComponent } from './auth/auth.component';
 import {AddBugReportComponent} from './add-bug-report/add-bug-report.component'
+import {RegisterComponent} from './register/register.component';
 
 const routes: Routes = [
  
@@ -11,7 +12,8 @@ const routes: Routes = [
   {path: 'homepage-programmer',component: HomepageProgrammerComponent},
   {path: 'auth',component: AuthComponent},
   {path: 'add-bug-report',component: AddBugReportComponent},
-  {path: '',component: AuthComponent}
+  {path: '',component: AuthComponent},
+  {path: 'admin-register',component: RegisterComponent}
 ];
 
 @NgModule({
