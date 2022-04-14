@@ -5,6 +5,7 @@ import { HomepageTesterComponent } from './homepage-tester/homepage-tester.compo
 import { AuthComponent } from './auth/auth.component';
 import {AddBugReportComponent} from './add-bug-report/add-bug-report.component'
 import {RegisterComponent} from './register/register.component';
+import {HomepageAdminComponent} from './homepage-admin/homepage-admin.component';
 
 const routes: Routes = [
  
@@ -13,7 +14,8 @@ const routes: Routes = [
   {path: 'auth',component: AuthComponent},
   {path: 'add-bug-report',component: AddBugReportComponent},
   {path: '',component: AuthComponent},
-  {path: 'admin-register',component: RegisterComponent}
+  {path: 'admin-register',component: RegisterComponent},
+  {path: 'homepage-admin',component: HomepageAdminComponent }
 ];
 
 @NgModule({

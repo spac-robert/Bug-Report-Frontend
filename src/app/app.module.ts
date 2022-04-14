@@ -9,6 +9,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AuthComponent } from './auth/auth.component';
 import { AddBugReportComponent } from './add-bug-report/add-bug-report.component';
 import { RegisterComponent } from './register/register.component';
+import { HomepageAdminComponent } from './homepage-admin/homepage-admin.component';
+import { ReactiveFormsModule } from '@angular/forms';
+// import { SharedComponent } from './shared/shared.component';
 
 @NgModule({
   declarations: [
@@ -17,12 +20,15 @@ import { RegisterComponent } from './register/register.component';
     HomepageProgrammerComponent,
     AuthComponent,
     AddBugReportComponent,
-    RegisterComponent
+    RegisterComponent,
+    HomepageAdminComponent,
+    // SharedComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
