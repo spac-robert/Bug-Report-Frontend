@@ -12,7 +12,7 @@ export enum Role {
 export class User {
 
   constructor(private readonly email: string,
-              private readonly role: Role) {
+    private readonly role: Role) {
   }
 
   isAdmin(): boolean {
@@ -27,4 +27,12 @@ export class User {
     return this.role === Role.ROLE_TESTER;
   }
 
+}
+
+export class RegisterUser {
+  constructor(
+    private readonly username: string,
+    private readonly email: string,
+    private readonly role: Role) {
+  }
 }
