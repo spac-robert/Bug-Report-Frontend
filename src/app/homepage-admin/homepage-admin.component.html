@@ -1,7 +1,12 @@
 <div class="topnav">
     <a class="active">ADMIN</a>
+    <a href="admin-register">Register Employee</a>
     <a href="add-bug-report">Add Bug Report</a>
     <a href="homepage-tester">Tester</a>
     <a href="homepage-programmer">Programmer list</a>
-    
+    <form [formGroup]="logoutForm" (ngSubmit)="logout()">
+      <div class="col-lg-7 login-btm login-button">
+        <button type="submit"class="btn btn-outline-primary">LOGIN</button>
+      </div>
+    </form>
   </div>

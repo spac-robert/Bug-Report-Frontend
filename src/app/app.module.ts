@@ -11,7 +11,8 @@ import { AddBugReportComponent } from './add-bug-report/add-bug-report.component
 import { RegisterComponent } from './register/register.component';
 import { HomepageAdminComponent } from './homepage-admin/homepage-admin.component';
 import { ReactiveFormsModule } from '@angular/forms';
-// import { SharedComponent } from './shared/shared.component';
+import {AuthService} from "./auth/services/auth.service";
+import {HttpClient, HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -22,15 +23,20 @@ import { ReactiveFormsModule } from '@angular/forms';
     AddBugReportComponent,
     RegisterComponent,
     HomepageAdminComponent,
-    // SharedComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     ReactiveFormsModule,
+    HttpClientModule,
+    
   ],
-  providers: [],
+  providers: [
+    HttpClient,
+
+    AuthService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,7 +1,11 @@
-
 <div class="topnav">
   <a class="active">QA Engeneer</a>
   <a href="add-bug-report">Add Bug Report</a>
+  <form [formGroup]="logoutForm" (ngSubmit)="logout()">
+    <div class="col-lg-7 login-btm login-button">
+      <button type="submit"class="btn btn-outline-primary">Logout</button>
+    </div>
+  </form>
 </div>
 <h2>Responsive Table</h2>
  <div class="table-wrapper">
@@ -16,22 +20,11 @@
          </thead>
          <tbody>
          <tr>
-             <td>Costel vulcanizare</td>
-             <td>Radio</td>
-             <td>----------------</td>
-             <td>UNSOLVED</td>
-         </tr>
-         <tr>
-             <td>Daniel Baiatu' Vulture</td>
-             <td>Glitch</td>
-             <td>In map 2 at Orcs, near the castle it is a floating tree with a donky on it</td>
-             <td>UNSOLVED</td>
-         </tr>
-         <tr>
-             <td>Costel Saolinul</td>
-             <td>Flying cars</td>
-             <td>After pressing A and D simultaaniously and hit a car it will fly </td>
-             <td>UNSOLVED</td>
+          <tr *ngFor="let bug of bugs">
+            <td>{{bug.testerName}}</td>
+            <td>{{bug.bugName}}</td>
+            <td>{{bug.description}}</td>
+            <td>{{bug.solved}}</td>
          </tr>
          <tbody>
      </table>

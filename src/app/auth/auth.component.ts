@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { LoginRequest } from './login-request';
+import {Component, OnInit} from '@angular/core';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {AuthService} from "./services/auth.service";
+import {Router} from "@angular/router";
+import { LoginRequest, User } from '../dto/login-request';
 
 
 @Component({
@@ -13,7 +15,10 @@ export class AuthComponent implements OnInit {
   loginForm!: FormGroup;
   loginRequest: LoginRequest
 
-  constructor() {
+  constructor(
+    public authService: AuthService,
+    private router: Router
+  ) {
     this.loginRequest = {
       email: ' ',
       password: ' '
@@ -29,5 +34,19 @@ export class AuthComponent implements OnInit {
 
   login(): void {
     this.loginRequest.email = this.loginForm.get('email')!.value;
+    this.loginRequest.password = this.loginForm.get('password')!.value;
+
+    this.authService.login(this.loginRequest)
+      .then((user: User) => {
+        if (user.isProgrammer()) {
+          this.router.navigateByUrl('/homepage-programmer');
+        }
+        if (user.isTester()) {
+          this.router.navigateByUrl('/homepage-tester');
+        }
+        if (user.isAdmin()) {
+          this.router.navigateByUrl('/homepage-admin');
+        }
+      })
   }
 }
