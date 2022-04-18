@@ -15,12 +15,6 @@ export class AuthService {
   constructor(private httpsClient: HttpClient) {
 
   }
-
-  public getBugs(): Observable<Bug[]> {
-    const resp = this.httpsClient.get<Bug[]>('http://localhost:8080/api/v1/homepage/tester');
-    return resp;
-  }
-
   public async login(loginRequest: LoginRequest): Promise<User> {
     const resp = await firstValueFrom(this.httpsClient.post<LoginResponse>('http://localhost:8080/login', loginRequest));
     let user = new User(resp.email, this.getRole(resp.authToken));
