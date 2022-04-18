@@ -39,9 +39,8 @@ export class AddBugReportComponent implements OnInit {
     this.bugRequest.bugName = this.bugReportForm.get('bugName')!.value;
     this.bugRequest.description = this.bugReportForm.get('description')!.value;
     this.bugRequest.solved = this.bugReportForm.get('solved')!.value;
-    //TODO aici
-    //this.bugRequest.testerName = localStorage.getItem('userData')
-    
+    this.bugRequest.testerName = localStorage.getItem('email')!
+
     this.bugService.addBug(this.bugRequest);
   }
 

@@ -18,7 +18,9 @@ export class AuthService {
   public async login(loginRequest: LoginRequest): Promise<User> {
     const resp = await firstValueFrom(this.httpsClient.post<LoginResponse>('http://localhost:8080/login', loginRequest));
     let user = new User(resp.email, this.getRole(resp.authToken));
-    localStorage.setItem('userData', JSON.stringify(user));
+    //localStorage.setItem('userData', JSON.stringify(user));
+    localStorage.setItem('email',resp.email);
+    localStorage.setItem('role',this.getRole(resp.authToken))
     return user;
   }
 

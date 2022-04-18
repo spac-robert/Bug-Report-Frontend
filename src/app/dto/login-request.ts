@@ -26,7 +26,6 @@ export class User {
   isTester(): boolean {
     return this.role === Role.ROLE_TESTER;
   }
-
 }
 
 export class RegisterUser {
